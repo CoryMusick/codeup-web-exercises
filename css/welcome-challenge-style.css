@@ -22,6 +22,16 @@ hr{
     height: 2px;
     border:none;
 }
+img{
+    transform:rotate(10deg) translateX(-110px) translateY(25px);
+}
+
+section:nth-of-type(2){
+    background-color: #fff;
+}
+section:nth-child(5) {
+    text-align:center;
+}
 
 
 #wrapper{
@@ -33,23 +43,3 @@ hr{
      text-decoration: underline;
  }
 
-section:nth-of-type(2){
-    background-color: #fff;
-}
-section:nth-child(5) {
-    text-align:center;
-}
-
-img:nth-child(2) {
-    transform:rotate(10deg) translateX(-110px) translateY(25px);
-
-}
-img:nth-child(3) {
-    transform:rotate(10deg) translateX(-110px) translateY(25px);
-}
-img:nth-child(5) {
-    transform:rotate(10deg) translateX(-110px) translateY(25px);
-}
-img:nth-child(6) {
-    transform:rotate(10deg) translateX(-110px) translateY(25px);
-}
