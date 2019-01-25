@@ -1,8 +1,9 @@
+/*background color and font for whole page*/
 body{
     background-color: #AFE0E6;
     font-family: "American Typewriter";
 }
-
+/*header style*/
 h1{
     background-color: #fff;
     text-align: center;
@@ -10,35 +11,36 @@ h1{
     text-shadow: 2px 2px #ff00f3;
     letter-spacing: .25em;
 }
-
+/*sub head styling*/
 h2{
     color:#3B8E3C;
     font-weight: lighter;
 }
-
+/*white line styling*/
 hr{
     color: #ffffff;
     background-color: #fff;
     height: 2px;
     border:none;
 }
+/*image transformation*/
 img{
     transform:rotate(10deg) translateX(-110px) translateY(25px);
 }
-
+/*white space for second section*/
 section:nth-of-type(2){
     background-color: #fff;
 }
+/*center company vision*/
 section:nth-child(5) {
     text-align:center;
 }
-
-
+/*normal text color*/
 #wrapper{
     color: #3039A3;
 
 }
-
+/*underline first list*/
 #wrapper :first-child ul {
      text-decoration: underline;
  }
