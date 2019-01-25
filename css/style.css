@@ -1,3 +1,77 @@
-.fancy-header {
-    color: purple; /* single line comment */
-    text-decoration: underline;
+/*Sub-Heading color and underline*/
+h3{
+    color: #b30000;
+    text-decoration:underline;
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+/*background color*/
+.container{
+    background-color: #808080;
+    font-family: 'Roboto', sans-serif;
+    padding: 0px;
+}
+
+.core{
+    text-align:center;
+}
+
+header{
+    background-image: url('../images/welcome_background.png');
+    background-size: cover;
+    height: 100%; width:100%;
+}
+
+/*Top Heading center and color*/
+#main_heading{
+    color: #b30000;
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+    padding:0px;
+}
+
+table{
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+tr{
+    text-align:center;
+    padding-left: 25%;
+}
+p{
+    color: #ffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+ol, ul{
+    list-style-type: square;
+}
+footer{
+    text-align: center;
+}
+
+#product{
+    text-align: center;
+}
+
+/* unvisited link (:link) */
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
