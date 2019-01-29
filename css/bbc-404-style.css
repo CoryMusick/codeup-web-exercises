@@ -1,14 +1,31 @@
 html{
     height: 0;
+    font-family: "Gill Sans", sans-serif;
 }
 body{
     margin:0;
     background-color: #EDEDED;
 }
-h1, h4{
+h1{
     margin: 0;
+    padding: 20px 0 5px 20px;
+    font-weight: lighter;
 }
 
+h4{
+    margin: 0;
+    padding: 20px 0 5px 20px;
+}
+p{
+    width: 280px;
+    padding:0 0 10px 10px;
+    font-size: .75em;
+    margin: 0;
+}
+ul{
+    margin: 0;
+    padding: 5px 0 5px 40px;
+}
 .border-left{
     border-left: solid 1px #ffffff;
 }
@@ -21,7 +38,8 @@ h1, h4{
 }
 .container{
     background-color: #fff;
-    margin: 0 18%;
+    margin: 0 15%;
+    padding: 0 0 20px 0;
 
 }
 .header{
@@ -31,10 +49,12 @@ h1, h4{
 .gray_box{
      margin: 0 1%;
      background-color: #E0E0E0;
+    padding: 20px 0;
  }
 .text_box{
-    margin: 0 20%;
-    background-color: #FFF
+    margin: 0 15%;
+    background-color: #FFF;
+    border-radius: 10px;
 }
 .navitem{
     display:inline-block;
@@ -44,8 +64,14 @@ h1, h4{
     text-align:center;
     line-height: 2em;
     padding: 7px 0;
+    font-size: .75em;
 
 }
+.list-item{
+    list-style-type: none;
+
+}
+
 .nav-list{
     margin: 0 20%;
     padding: 0;
@@ -56,6 +82,8 @@ h1, h4{
     margin: 8px 0;
     width: 2em;
     padding: 0;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .signin{
@@ -70,5 +98,76 @@ h1, h4{
 
 }
 .footer{
-    background-color: #333;
+    background-color: #808080;
+    color: #ffffff;
+    margin: 0 1%;
+}
+.footer-bbc{
+    width: 150px;
+    padding-left:10px;
+    margin: 0;
+}
+.footer-list{
+    float: right;
+    margin: 10px 20px 0 0;
+    font-size: .75em;
+}
+.yellow{
+    background-color: yellow;
+    float: left;
+    width: 14.2857143%;
+    height: 5px;
+}
+.lightblue{
+    background-color: lightblue;
+    float: left;
+    width: 14.2857143%;
+    height: 5px;
+}
+.green{
+    background-color: #0B860C;
+    float: left;
+    width: 14.2857143%;
+    height: 5px;
+}
+.pink{
+    background-color: #FAD3D7;
+    float: left;
+    width: 14.2857143%;
+    height: 5px;
+}
+.red{
+    background: #8D2740;
+    float: left;
+    width: 14.2857143%;
+    height: 5px;
+}
+.blue{
+    background-color: #352B91;
+    float: left;
+    width: 14.2857143%;
+    height: 5px;
+}
+.gray{
+    background-color: #848487;
+    float: left;
+    width: 14.2857143%;
+    height: 5px;
+}
+.bottom-green{
+    background-color: #0B860C;
+    float: left;
+    width: 6.25%;
+    height: 5px;
+}
+.bottom-gray{
+    background-color: #848487;
+    float: left;
+    width: 6.25%;
+    height: 5px;
+}
+.filler{
+    background-color: #EDEDED;
+    height: 63px;
+    margin: 0 1%;
 }
