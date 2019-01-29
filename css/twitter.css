@@ -86,12 +86,12 @@ a {
     margin: 0 .5em;
 
 }
-.profile-entry:{
+.profile-entry{
     margin: .5em;
 }
 /*profile form float*/
 .profile-form{
-    float: right;
+    /*float: right;*/
     line-height: 80px;
 }
 /* profile picture positioning*/
@@ -101,6 +101,7 @@ a {
 }
 .profile-items{
     list-style: none;
+    padding:0;
 }
 .btn {
     border: 1px solid var(--main-link-color);
