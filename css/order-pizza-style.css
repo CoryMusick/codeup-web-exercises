@@ -1,0 +1,7 @@
+.pizza-image {
+    background-image: url(../images/pizza.png)
+}
+.pizza-image h1{
+background-color: #ffffff;
+    opacity: .6;
+}
