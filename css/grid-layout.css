@@ -26,7 +26,7 @@ body {
 .one-third-column,
 .one-fourth-column,
 .one-sixth-column,
-.one-eighth--column,
+.one-eighth-column,
 .two-thirds-column{
     float: left;
     width: 100%;
@@ -43,13 +43,13 @@ body {
     margin-left: 25%;
 }
 .twothirds-offset{
-    margin-left: 66.66%
+    margin-left: 66.66%;
 }
 .one-eighth-offset{
-    margin-left: 12.5%
+    margin-left: 12.5%;
 }
 .seveneighths-offset{
-    margin-left: 87.5%
+    margin-left: 87.5%;
 }
 .one-sixth-offset{
     margin-left: 16.66%;
