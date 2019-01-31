@@ -13,6 +13,9 @@ h1 {
     font-size: 3em;
     margin: 0 0 .5em 0;
 }
+footer{
+    margin: 1em 0 0 0;
+}
 
 
 .alert-info {
@@ -66,13 +69,7 @@ li {
     color: #0000FF;
 }
 
-footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    display:flex;
 
-}
 #social-media-links>img{
     width: 50px;
     height: 50px;
@@ -89,7 +86,6 @@ footer{
     }
 
     h1 { text-align: left;
-        width: 50%;
         margin: 1em .5em;
         float: left;
 
@@ -108,7 +104,6 @@ footer{
     }
 
     .main {
-        width: 75%;
         display: block;
         margin: 0;
         font-weight: bold;
@@ -117,7 +112,6 @@ footer{
     .sub-section {
         font-style: italic;
         font-weight: 700;
-        width: 25%;
         display: block;
         margin: 0;
         float: right;
@@ -125,6 +119,7 @@ footer{
     }
     li{
         display: inline-block;
+        background-color: #ffffff;
     }
 
     img {
