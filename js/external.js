@@ -39,12 +39,15 @@ var total = fbRate * fbHours + amazonRate * amazonHours + googleRate * googleHou
 alert('You made $' + total + ' this week!' );
 
 var classIsFull; // boolean
-var classSchedulesCheck; // boolean
-var studentEnrolled = !classFull && classSchedulesCheck;
+var classSchedulesCheck; //boolean
+var studentEnrolled = (!classIsFull && classSchedulesCheck);
 }
+alert('You can enroll ' + studentEnrolled);
 
+var numItems = prompt('How many items did you buy?');
+var notExpired = confirm('If the offer is not expired press okay');
+var member = confirm('If you are a member press okay') ;
 
-var numItems; // number
-var expired; // boolean
-var member; // boolean
-var offer = (member || numItems > 2) && offer;
+var offer = (member || Number(numItems) > 2) && notExpired;
+
+alert('You can use this offer: ' + offer);
