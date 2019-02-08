@@ -8,6 +8,7 @@
 //  * Example
 //  * > sayHello("codeup") // returns "Hello, codeup!"
 //  */
+//  IIFE
 // // (function()
 // // {
 //     function sayHello(name) {
@@ -113,120 +114,186 @@
 //
 //     console.log(applyDiscount(originalPrice, discountPercent));
 
-//isOdd
-    function isOdd(number){
-        return number % 2 === 1;
-    }
+//********* BONUS EXERCISES ***************//
 
-    console.log(isOdd(13)); // true
-    console.log(isOdd(144)); // false
 
-//isEven
-    function isEven(number){
-        return number % 2 === 0;
-    }
-
-    console.log(isEven(13)); // false
-    console.log(isEven(144)); // true
-
+//     //isOdd
+//     function isOdd(number){
+//         return number % 2 === 1;
+//     }
+//
+//     console.log(isOdd(13)); // true
+//     console.log(isOdd(144)); // false
+//
+// //isEven
+//     function isEven(number){
+//         return number % 2 === 0;
+//     }
+//
+//     console.log(isEven(13)); // false
+//     console.log(isEven(144)); // true
+//
 //identity
     function identity(input){
         return input;
     }
+//
+//     console.log(identity('hello')); // hello
+//     console.log(identity(7)); // 7
+//
+// //isFive
+//     function isFive(){
+//         return 5;
+//     }
+//
+//     console.log(isFive()); // 5
+//
+// // addFive
+//     function addFive(input){
+//         return input + isFive()
+//     }
+//
+//     console.log(addFive(15)); // 20
+//
+// //isMultipleOfFive
+//     function isMultipleOfFive(input){
+//         return input % isFive() === 0
+//     }
+//
+// console.log(isMultipleOfFive(14)); // false
+// console.log(isMultipleOfFive(25)); //true
+//
+// //isThree
+//     function isThree(){
+//         return 3
+//     }
+//
+// console.log(isThree()); // 3
+//
+// //isMultipleOfThree
+//     function isMultipleOfThree(input){
+//         return input % isThree() === 0;
+//     }
+//
+// console.log(isMultipleOfThree(9)); // true
+// console.log(isMultipleOfThree(16)); //false
+//
+// //isMultipleOfThreeAndFive
+//     function isMultipleOfThreeAndFive(input){
+//         return (input % isThree() === 0) && (input % isFive() === 0)
+//     }
+//
+// console.log(isMultipleOfThreeAndFive(15)); // true
+// console.log(isMultipleOfThreeAndFive(9)); // false
+// console.log(isMultipleOfThreeAndFive(5)); // false
+//
+// // isMultipleOf
+//     function isMultipleOf(target, n){
+//         return target % n === 0;
+//     }
+//
+// console.log(isMultipleOf(15, 5)); // true
+// console.log(isMultipleOf(12, 10)); // false
+//
+// //isTrue
+//     function isTrue(boolean){
+//         return boolean === true;
+//     }
+//
+// console.log(isTrue(true)); // true
+// console.log(isTrue(false)); // false
+//
+// //isFalse
+//     function isFalse(boolean){
+//         return boolean === false;
+// }
+//
+// console.log(isFalse(true)); // false
+// console.log(isFalse(false)); // true
+//
+// //isTruthy
+//     function isTruthy(input){
+//         return input == true;
+//     }
+//
+// console.log(isTruthy(false)); // false
+// console.log(isTruthy(1)); // true
+// console.log(isTruthy(15)); // false
+// console.log(isTruthy(true)); // true
+//
+// //isFalsy
+//     function isFalsy(input){
+//         return input == false;
+//
+//     }
+//
+// console.log(isFalsy(false)); // true
+// console.log(isFalsy(0)); // true
+// console.log(isFalsy(15)); // false
+// console.log(isFalsy(true)); // false
+//
+// //isVowel
+//     function isVowel(letter){
+//         return letter.toLowerCase() === 'a' || letter.toLowerCase() ==='e'
+//         || letter.toLowerCase() === 'i' || letter.toLowerCase() === 'o' || letter.toLowerCase() ==='u';
+//     }
+//
+// console.log(isVowel('c')); // false
+// console.log(isVowel('E')); // true
+// console.log(isVowel('a')); // true
+//
+// //isConsonant
+//     function isConsonant(letter){
+//         return letter.toLowerCase() !== 'a' && letter.toLowerCase() !=='e'
+//             && letter.toLowerCase() !== 'i' && letter.toLowerCase() !== 'o' && letter.toLowerCase() !=='u';
+//     }
+//
+// console.log(isConsonant('c')); // true
+// console.log(isConsonant('E')); // false
+// console.log(isConsonant('H')); // true
+//
+// //isCapital
+//     function isCapital(letter){
+//         return letter === letter.toUpperCase();
+//     }
+//
+// console.log(isCapital('A')); // true
+// console.log(isCapital('b')); // false
+//
+// //isLowerCase
+//     function isLowerCase(letter){
+//         return letter === letter.toLowerCase();
+//     }
+//
+// console.log(isLowerCase('A')); // false
+// console.log(isLowerCase('b')); // true
+//
+// // hasLowerCase
+//     function hasLowerCase(string){
+//         return string !== string.toUpperCase();
+//     }
+//
+// console.log(hasLowerCase('HEllO')); // true
+// console.log(hasLowerCase('HOLA')); // false
+//
+//
+// // isSpace
+//     function isSpace(letter){
+//         return letter === " ";
+//
+//     }
+//
+// console.log(isSpace(" "));//true
+// console.log(isSpace("a")); // false
+// console.log(isSpace(2)); // false
 
-    console.log(identity('hello')); // hello
-    console.log(identity(7)); // 7
 
-//isFive
-    function isFive(){
-        return 5;
+//*** CHALLENGE FUNCTION DRILLS ***
+    function getRandomNumber(min,Max){
+        return Math.floor((Math.random() * Max) + min)
+
     }
 
-    console.log(isFive()); // 5
-
-// addFive
-    function addFive(input){
-        return input + isFive()
-    }
-
-    console.log(addFive(15)); // 20
-
-//isMultipleOfFive
-    function isMultipleOfFive(input){
-        return input % isFive() === 0
-    }
-
-console.log(isMultipleOfFive(14)); // false
-console.log(isMultipleOfFive(25)); //true
-
-//isThree
-    function isThree(){
-        return 3
-    }
-
-console.log(isThree()); // 3
-
-//isMultipleOfThree
-    function isMultipleOfThree(input){
-        return input % isThree() === 0;
-    }
-
-console.log(isMultipleOfThree(9)); // true
-console.log(isMultipleOfThree(16)); //false
-
-//isMultipleOfThreeAndFive
-    function isMultipleOfThreeAndFive(input){
-        return (input % isThree() === 0) && (input % isFive() === 0)
-    }
-
-console.log(isMultipleOfThreeAndFive(15)); // true
-console.log(isMultipleOfThreeAndFive(9)); // false
-console.log(isMultipleOfThreeAndFive(5)); // false
-
-// isMultipleOf
-    function isMultipleOf(target, n){
-        return target % n === 0;
-    }
-
-console.log(isMultipleOf(15, 5)); // true
-console.log(isMultipleOf(12, 10)); // false
-
-//isTrue
-    function isTrue(boolean){
-        return boolean === true;
-    }
-
-console.log(isTrue(true)); // true
-console.log(isTrue(false)); // false
-
-//isFalse
-    function isFalse(boolean){
-        return boolean === false;
-}
-
-console.log(isFalse(true)); // false
-console.log(isFalse(false)); // true
-
-//isTruthy
-    function isTruthy(input){
-        return input == true;
-    }
-
-console.log(isTruthy(false)); // false
-console.log(isTruthy(1)); // true
-console.log(isTruthy(15)) // false
-console.log(isTruthy(true)) // true
-
-//isFalsy
-    function isFalsy(input){
-        return input == false;
-
-    }
-
-console.log(isFalsy(false)); // true
-console.log(isFalsy(0)); // true
-console.log(isFalsy(15)) // false
-console.log(isFalsy(true)) // false
-
-
+console.log(getRandomNumber(1, 100));
+//isZero
 // }());
