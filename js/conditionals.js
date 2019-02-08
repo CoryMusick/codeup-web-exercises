@@ -16,6 +16,89 @@
  * Can you refactor your code to use functions?
  */
 
+    // var answer = confirm("Would you like to enter a number?");
+    //
+    // if (confirm("Would you like to enter a number?")){
+    //   var number = prompt("Please enter a number")
+    // } else { alert("Sad Face :(")}
+    //
+    // number = Number(number);
+
+//     if(number - number === 0){
+//
+//         if (number % 2 === 0){
+//         alert('The number is even')
+//     } else{
+//         alert("The number is odd")
+//     }
+//
+//     alert("Your number plus 100 is " + Number(number + 100));
+//
+//     if(number > 0 ) {
+//         alert("The number is positive")
+//     } else{
+//             alert("The Number is negative")
+//         }
+//
+// }else {alert("That is not a number");
+//
+
+//REFACTOR IN FUNCTIONS //
+function askForNumber(){
+    if (confirm("Would you like to enter a number?")){
+      var number = +prompt("Please enter a number");
+        return number;
+    } else {
+        return  alert("Sad Face :("); }
+}
+
+function isNumber(num){
+       return num - num === 0;
+    }
+function evenOrOddAlert(num){
+    if (num % 2 === 0){
+            alert('The number is even')
+        return num;
+            } else{
+            alert("The number is odd")
+        return num;
+            }
+    }
+function addOneHundredAlert(num){
+        alert("Your number plus 100 is " + Number(num + 100))
+        return num;
+    }
+
+function postiveOrNegAlert(num){
+    if(num > 0 ) {
+        return alert("The number is positive")
+    } else{
+        return alert("The Number is negative")
+    }
+    }
+
+
+    function run() {
+        var number = askForNumber();
+
+        if(isNumber(number)){
+
+            evenOrOddAlert(number);
+
+            addOneHundredAlert(number);
+
+            postiveOrNegAlert(number);
+
+            } else {
+               return alert("That is not a number")
+                }
+        }
+        //call function
+    run();
+
+
+
+
 /* ########################################################################## */
 
 /**
@@ -35,6 +118,9 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+
+
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
