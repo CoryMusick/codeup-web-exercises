@@ -14,89 +14,89 @@
  * do *not* display any of the above information.
  *
  * Can you refactor your code to use functions?
- */
-
-    // var answer = confirm("Would you like to enter a number?");
-    //
-    // if (confirm("Would you like to enter a number?")){
-    //   var number = prompt("Please enter a number")
-    // } else { alert("Sad Face :(")}
-    //
-    // number = Number(number);
-
-//     if(number - number === 0){
+//  */
+// //
+// //     var answer = confirm("Would you like to enter a number?");
+// //
+// //     if (confirm("Would you like to enter a number?")){
+// //       var number = prompt("Please enter a number")
+// //     } else { alert("Sad Face :(")}
+// //
+// //     number = Number(number);
+// //
+// //     if(number - number === 0){
+// //
+// //         if (number % 2 === 0){
+// //         alert('The number is even')
+// //     } else{
+// //         alert("The number is odd")
+// //     }
+// //
+// //     alert("Your number plus 100 is " + Number(number + 100));
+// //
+// //     if(number > 0 ) {
+// //         alert("The number is positive")
+// //     } else{
+// //             alert("The Number is negative")
+// //         }
+// //
+// // }else {alert("That is not a number");
+// //
+// //
+// // REFACTOR IN FUNCTIONS //
+// // function askForNumber(){
+// //     if (confirm("Would you like to enter a number?")){
+// //       var number = +prompt("Please enter a number");
+// //         return number;
+// //     } else {
+// //         return  alert("Sad Face :("); }
+// // }
+// //
+// // function isNumber(num){
+// //        return num - num === 0;
+// //     }
+// // function evenOrOddAlert(num){
+// //     if (num % 2 === 0){
+// //             alert('The number is even')
+// //         return num;
+// //             } else{
+// //             alert("The number is odd")
+// //         return num;
+// //             }
+// //     }
+// // function addOneHundredAlert(num){
+// //         alert("Your number plus 100 is " + Number(num + 100))
+// //         return num;
+// //     }
+// //
+// // function postiveOrNegAlert(num){
+// //     if(num > 0 ) {
+// //         return alert("The number is positive")
+// //     } else{
+// //         return alert("The Number is negative")
+// //     }
+// //     }
+// //
+// //
+// //     function run() {
+// //         var number = askForNumber();
+// //
+// //         if(isNumber(number)){
+// //
+// //             evenOrOddAlert(number);
+// //
+// //             addOneHundredAlert(number);
+// //
+// //             postiveOrNegAlert(number);
+// //
+// //             } else {
+// //                return alert("That is not a number")
+// //                 }
+// //         }
+// //         //call function
+// //     run();
 //
-//         if (number % 2 === 0){
-//         alert('The number is even')
-//     } else{
-//         alert("The number is odd")
-//     }
 //
-//     alert("Your number plus 100 is " + Number(number + 100));
-//
-//     if(number > 0 ) {
-//         alert("The number is positive")
-//     } else{
-//             alert("The Number is negative")
-//         }
-//
-// }else {alert("That is not a number");
-//
-
-//REFACTOR IN FUNCTIONS //
-function askForNumber(){
-    if (confirm("Would you like to enter a number?")){
-      var number = +prompt("Please enter a number");
-        return number;
-    } else {
-        return  alert("Sad Face :("); }
-}
-
-function isNumber(num){
-       return num - num === 0;
-    }
-function evenOrOddAlert(num){
-    if (num % 2 === 0){
-            alert('The number is even')
-        return num;
-            } else{
-            alert("The number is odd")
-        return num;
-            }
-    }
-function addOneHundredAlert(num){
-        alert("Your number plus 100 is " + Number(num + 100))
-        return num;
-    }
-
-function postiveOrNegAlert(num){
-    if(num > 0 ) {
-        return alert("The number is positive")
-    } else{
-        return alert("The Number is negative")
-    }
-    }
-
-
-    function run() {
-        var number = askForNumber();
-
-        if(isNumber(number)){
-
-            evenOrOddAlert(number);
-
-            addOneHundredAlert(number);
-
-            postiveOrNegAlert(number);
-
-            } else {
-               return alert("That is not a number")
-                }
-        }
-        //call function
-    run();
-
-
 
 
 /* ########################################################################## */
@@ -119,7 +119,26 @@ function postiveOrNegAlert(num){
  * console.logging the function's return value
  */
 
+    function analyzeColor (string){
+        if (string === 'blue'){
 
+            return 'Blue is the color of the sky';
+        }
+        else if ( string === 'red') {
+
+            return 'Strawberries are red'
+        }
+        else if (string === 'cyan'){
+
+            return "I dont't know anything about Cyan."
+        }
+        else{
+
+            return "I've never heard of that color."
+        }
+}
+
+console.log(analyzeColor('blue'));
 
 
 // Don't change the next two lines!
@@ -135,17 +154,41 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message everytime you refresh the page
  */
 
+
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+function analyzeColor(string){
+    switch(string){
+        case "blue":
+            var answer = 'Blue is the color of the sky';
+            return answer;
+        case 'red':
+            var answer = 'Strawberries are red';
+            return answer;
+        case 'cyan':
+            var answer = "I don't know anything about cyan";
+            return answer;
+        default:
+            var answer = "I've never heard of that color";
+            return answer;
 
+    }
+}
+
+console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+// var input = prompt("Please enter a color");
+// analyzeColor(input);
+//
+// alert(analyzeColor(input));
 
 /* ########################################################################## */
 
@@ -168,6 +211,26 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal (number, bill){
+    switch(number){
+        case 1:
+            return bill - (bill * .10);
+        case 2:
+            return bill - (bill * .25);
+        case 3:
+            return bill - (bill * .35);
+        case 4:
+            return bill - (bill * .50);
+        case 5:
+            return bill - bill;
+        default:
+            return bill;
+    }
+}
+
+
+
+
 
 /**
  * TODO:
@@ -177,4 +240,5 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+console.log(calculateTotal(luckyNumber, 100));
