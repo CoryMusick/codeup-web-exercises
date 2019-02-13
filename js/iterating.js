@@ -65,10 +65,10 @@
         return array[4]
     }
 
-    console.log(first([1, 2, 3, 4, 5]));;
+    console.log(first([1, 2, 3, 4, 5]));
 
-    console.log(second([1, 2, 3, 4, 5]));;
+    console.log(second([1, 2, 3, 4, 5]));
 
-    console.log(last([1, 2, 3, 4, 5]));;
+    console.log(last([1, 2, 3, 4, 5]));
 
 })();
