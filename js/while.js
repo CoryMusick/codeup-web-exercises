@@ -14,7 +14,6 @@ while (allCones >= 0){
     if (allCones >= purchasedCones && allCones !== 0){
     allCones = allCones - purchasedCones;
     alert(purchasedCones + " cones sold..." + allCones + " cones left")
-
     }else if(purchasedCones > allCones && allCones !== 0){
         alert("Cannot sell you " + purchasedCones + " cones I only have " + allCones)
 
