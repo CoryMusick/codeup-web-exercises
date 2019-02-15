@@ -111,7 +111,9 @@
 ];
 
     for(let i = 0; i < books.length; i++){
-
+        console.log('Book #' + (+i + 1) + '\n' + 'Title: ' + books[i].title +
+        '\n' + 'Author: ' + books[i].author.firstName + ' ' + books[i].author.lastName +
+        '\n' + '---' + '\n')
     }
 
         /**
