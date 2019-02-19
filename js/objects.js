@@ -15,7 +15,7 @@
         firstName: 'Cory',
         lastName: 'Musick',
         sayHello: function(){
-            return "Hello " + person.firstName + ' ' + person.lastName;
+            return "Hello from " + this.firstName + ' ' + this.lastName + '!';
         }
 
     };
@@ -48,7 +48,7 @@
      * and console.log the relevant messages for each person
      */
 
-    var shoppers = [
+    let shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
@@ -77,44 +77,44 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    let books = [
-        {title: 'Mistborn' ,
-            author:{
-                firstName: 'Brandon',
-                lastName: 'Sanderson'
-                }
-        },
-        {title: 'Lord of the Rings' ,
-            author:{
-                firstName:'J.R.R.',
-                lastName: 'Tolkien'
-                }
-            },
-        {title: 'No Easy Day',
-            author:{
-                firstName: 'Mark',
-                lastName: 'Owen'
-            }
-        },
-        {title: '1984',
-            author:{
-                firstName: 'George',
-                lastName: 'Orwell'
-            }
-        },
-        {title: 'Fight Club' ,
-            author:{
-                firstName: 'Chuck',
-                lastName: 'Palahniuk'
-            }
-        }
-];
-
-    for(let i = 0; i < books.length; i++){
-        console.log('Book #' + (+i + 1) + '\n' + 'Title: ' + books[i].title +
-        '\n' + 'Author: ' + books[i].author.firstName + ' ' + books[i].author.lastName +
-        '\n' + '---' + '\n')
-    }
+//     let books = [
+//         {title: 'Mistborn' ,
+//             author:{
+//                 firstName: 'Brandon',
+//                 lastName: 'Sanderson'
+//                 }
+//         },
+//         {title: 'Lord of the Rings' ,
+//             author:{
+//                 firstName:'J.R.R.',
+//                 lastName: 'Tolkien'
+//                 }
+//             },
+//         {title: 'No Easy Day',
+//             author:{
+//                 firstName: 'Mark',
+//                 lastName: 'Owen'
+//             }
+//         },
+//         {title: '1984',
+//             author:{
+//                 firstName: 'George',
+//                 lastName: 'Orwell'
+//             }
+//         },
+//         {title: 'Fight Club' ,
+//             author:{
+//                 firstName: 'Chuck',
+//                 lastName: 'Palahniuk'
+//             }
+//         }
+// ];
+//
+//     for(let i = 0; i < books.length; i++){
+//         console.log('Book #' + (+i + 1) + '\n' + 'Title: ' + books[i].title +
+//         '\n' + 'Author: ' + books[i].author.firstName + ' ' + books[i].author.lastName +
+//         '\n' + '---' + '\n')
+//     }
 
         /**
      * TODO:
@@ -151,5 +151,28 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    let createABook = function(title, author){
+        let authorArray = author.split(' ');
+        let book = {
+            title: title,
+            author:{
+                firstName: authorArray[0],
+                lastName: authorArray[1],
+            }
+        };
+        return book;
+    };
+    let refactorBooks = [createABook('Mistborn','Brandon Sanderson'),createABook('Lord of the Rings', "J.R.R Tolkien"),createABook("No Easy Day", 'Mark Owen'),
+        createABook("1984", 'George Orwell', createABook('Fight Club', 'Chuck Palahnuik'))];
+
+    let showBookInfo = function(book){
+       console.log("Title: "  + book.title + '\n' + 'Author: ' + book.author.firstName + " " + book.author.lastName + '\n' + "---" + '\n')
+    };
+
+
+    for(let i = 0; i < refactorBooks.length; i++){
+        console.log('Book #' + (+i+1) + showBookInfo(refactorBooks[i]))
+    }
 
 })();
