@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>maps exercise</title>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+	<script src="js/keys.js"></script>
+	<script src="js/mapbox-geocoder-utils.js"></script>
+</head>
+
+<body>
+<div id='map' style='width: 100%; height: 600px;'></div>
+
+<script>
+    mapboxgl.accessToken = myMapKey;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-98.4936 , 29.4241] ,
+        zoom: 15,
+    });
+
+    var pieSociety = "Pie Society San Marcos, TX 78666";
+    geocode(pieSociety, myMapKey).then(function(data){
+        map.setCenter(data);
+        map.setZoom(17);
+
+
+	//
+    // var popup = new mapboxgl.Popup()
+    //     .addTo(map)
+    //     .setHTML('<h2>Pie Society!</h2><br><p>Zen\'s Pizza is actually Pie Society and it\'s delicious</p>');
+
+    var popup = new mapboxgl.Popup()
+        .setHTML('<h2>Pie Society!</h2><br><p>Zen\'s Pizza is actually Pie Society and it\'s delicious</p>')
+	    .addTo(map);
+
+        var marker = document.createElement('div');
+
+
+    new mapboxgl.Marker(marker)
+	    .setLngLat(data)
+	    .addTo(map)
+        .setPopup(popup);
+
+    });
+
+
+
+
+</script>
+
+
+</body>
+</html>
