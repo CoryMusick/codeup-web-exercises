@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mapbox Map Number 4</title>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+	<script src="js/keys.js"></script>
+	<script src="js/mapbox-geocoder-utils.js"></script>
+</head>
+
+<body>
+<div id='map' style='width: 100%; height: 600px;'></div>
+
+<script>
+    mapboxgl.accessToken = myMapKey;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-98.4936 , 29.4241] ,
+        zoom: 10,
+    });
+
+    var zionNP = "Zion National Park";
+	var honoCoords = {lng: -157.8583, lat: 21.3069};
+
+    geocode(zionNP, myMapKey).then(function(data){
+        setTimeout(function(){
+            map.setCenter(data);
+            map.setZoom(9);
+        }, 5000)
+    });
+
+	reverseGeocode(honoCoords, myMapKey).then(function(data){
+	    geocode(data,myMapKey).then(function(coordinates){
+	        setTimeout(function(){
+	            map.setCenter(coordinates);
+	            map.setZoom(10);
+	        }, 10000)
+	    })
+	})
+
+
+
+</script>
+
+
+</body>
+</html>

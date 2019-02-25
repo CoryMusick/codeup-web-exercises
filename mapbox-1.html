@@ -10,7 +10,7 @@
 </head>
 	<!-- Custom CSS -->
 <body>
-	<div id='map' style='width: 400px; height: 300px;'></div>
+	<div id='map' style='width: 100%; height: 400px;'></div>
 
 	<script>
         mapboxgl.accessToken = myMapKey;
@@ -26,12 +26,11 @@
 
 
         var hideMap = function(){
-            var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v11',
-                center: [-98.5795 , 39.8283],
-                zoom: 2,
-        })};
+           map
+	           .setZoom(2)
+	           .setCenter([-98.5795, 39.8283])
+	           .setStyle ('mapbox://styles/mapbox/satellite-v9');
+        };
 
         setTimeout(hideMap, 5000)
 

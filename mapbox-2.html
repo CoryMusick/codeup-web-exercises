@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SecondMapbox Map</title>
+	<!-- Mapbox CSS -->
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+	<script src="js/keys.js"></script>
+</head>
+<body>
+<div id='map' style='width: 100%; height: 400px;'></div>
+
+<script>
+    mapboxgl.accessToken = myMapKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-77.0369 , 38.9072],
+        zoom: 12,
+    });
+
+    var marker = new mapboxgl.Marker()
+	    .setLngLat([-77.0502, 38.8893])
+	    .addTo(map);
+
+</script>
+
+</body>
+</html>
