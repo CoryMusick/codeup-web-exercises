@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>First Mapbox Map</title>
+	<!-- Mapbox CSS -->
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+	<script src="js/keys.js"></script>
+</head>
+	<!-- Custom CSS -->
+<body>
+	<div id='map' style='width: 400px; height: 300px;'></div>
+
+	<script>
+        mapboxgl.accessToken = myMapKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+	        center: [-149.9003 , 61.2182],
+	        zoom: 8,
+        });
+
+
+
+
+
+        var hideMap = function(){
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [-98.5795 , 39.8283],
+                zoom: 2,
+        })};
+
+        setTimeout(hideMap, 5000)
+
+
+	</script>
+
+
+</body>
+</html>
