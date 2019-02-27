@@ -28,24 +28,10 @@
         map.setCenter(data);
         map.setZoom(17);
 
-
-	//
-    // var popup = new mapboxgl.Popup()
-    //     .addTo(map)
-    //     .setHTML('<h2>Pie Society!</h2><br><p>Zen\'s Pizza is actually Pie Society and it\'s delicious</p>');
-
-    var popup = new mapboxgl.Popup()
-        .setHTML('<h2>Pie Society!</h2><br><p>Zen\'s Pizza is actually Pie Society and it\'s delicious</p>')
-	    .addTo(map);
-
-        var marker = document.createElement('div');
-
-
-    new mapboxgl.Marker(marker)
-	    .setLngLat(data)
-	    .addTo(map)
-        .setPopup(popup);
-
+	var places = [
+		{name: 'Pie Society' , location: 'Pie Society San Marcos, TX 78666', detail: 'This is Pie Society not Zen\'s'},
+		{name: ''}
+	]
     });
 
 
