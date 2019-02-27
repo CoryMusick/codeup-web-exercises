@@ -32,15 +32,24 @@
    'use strict';
 
    $(document).ready(function() {
-       alert('document ready');
+       console.log('document ready');
 // INSERT JAVASCRIPT CODE SAMPLE HERE
 
-	   alert($('h1').html());
+	$('h1').click(function(e){
+	  $(this).css('background-color', 'yellow')
+    })
 
-	   $('li, h1, p').css('background-color', 'yellow');
+	$('p').dblclick(function(e){
+	   $(this).css('font-size', '18px')
+	})
 
-
-
+   $('li').hover(
+       function(e){
+       $(this).css('color', 'red')
+   },
+        function(e){
+           $(this).css('color', 'black')
+        })
 
    })
 </script>
