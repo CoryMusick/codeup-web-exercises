@@ -19,22 +19,32 @@
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-98.4936 , 29.4241] ,
-        zoom: 15,
+        center: [-97.9414 , 29.8833] ,
+        zoom: 13,
     });
 
-    var pieSociety = "Pie Society San Marcos, TX 78666";
-    geocode(pieSociety, myMapKey).then(function(data){
-        map.setCenter(data);
-        map.setZoom(17);
-
-	var places = [
-		{name: 'Pie Society' , location: 'Pie Society San Marcos, TX 78666', detail: 'This is Pie Society not Zen\'s'},
-		{name: ''}
-	]
-    });
+    var places = [
+        {name: 'Pie Society' , location: 'Pie Society San Marcos, TX 78666', detail: 'This is Pie Society not Zen\'s'},
+        {name: 'Torchy\'s Tacos' , location: '301 N Guadalupe St, San Marcos, TX 78666' , detail:
+                'gotta get your trailer parks trashy'},
+        {name: 'Gumby\'s Pizza' , location: '312 W Hopkins St, San Marcos, TX 78666' , detail:
+                'Not as good as Pie Society but close second'}
+    ];
 
 
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.location, token).then(function(coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(info.detail);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+        })}
+
+    places.forEach(function(place){
+	    placeMarkerAndPopup(place,myMapKey,map)
+	})
 
 
 </script>
