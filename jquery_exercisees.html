@@ -6,12 +6,12 @@
 </head>
 <body>
 
-<h1 id="main_heading">jQuery ($) exercise!</h1>
-<div class="container">
+<h1 id="main_heading" class= "codeup">jQuery ($) exercise!</h1>
+<div class="container codeup">
 <p id="para">you can use jQuery or $ to reference jQuery</p>
 
 <ul id="list">
-	<li class="list-item">item 1</li>
+	<li class="list-item codeup">item 1</li>
 	<li class="list-item">item 2</li>
 	<li class="list-item">item 3</li>
 	<li class="list-item">item 4</li>
@@ -32,14 +32,9 @@
    'use strict';
 
    $(document).ready(function() {
-
+	alert('document ready');
 // INSERT JAVASCRIPT CODE SAMPLE HERE
-	alert('dom has finished loading');
-
-	alert( $('#para').html());
-
-	alert( $('#main_heading').html());
-
+	$('.codeup').css('border', '1px solid red');
     });
 
 
