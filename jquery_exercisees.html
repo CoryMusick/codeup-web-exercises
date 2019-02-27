@@ -6,15 +6,15 @@
 </head>
 <body>
 
-<h1>jQuery ($) exercise!</h1>
-<div>
-<p>you can use jQuery or $ to reference jQuery</p>
+<h1 id="main_heading">jQuery ($) exercise!</h1>
+<div class="container">
+<p id="para">you can use jQuery or $ to reference jQuery</p>
 
-<ul>
-	<li>item 1</li>
-	<li>item 2</li>
-	<li>item 3</li>
-	<li>item 4</li>
+<ul id="list">
+	<li class="list-item">item 1</li>
+	<li class="list-item">item 2</li>
+	<li class="list-item">item 3</li>
+	<li class="list-item">item 4</li>
 </ul>
 
 
@@ -34,7 +34,11 @@
    $(document).ready(function() {
 
 // INSERT JAVASCRIPT CODE SAMPLE HERE
-	    alert('dom has finished loading')
+	alert('dom has finished loading');
+
+	alert( $('#para').html());
+
+	alert( $('#main_heading').html());
 
     });
 
