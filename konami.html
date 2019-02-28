@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Konami Code</title>
+	<link href="css/konami-css.css" rel="stylesheet">
+</head>
+<body class="bgColor">
+<div class="centered heading-box">
+	<h1 class="white text-center">Konami Code</h1>
+	<h1 class="white text-center spacing">
+		<span id="0"> - </span>
+		<span id="1"> - </span>
+		<span id="2"> - </span>
+		<span id="3"> - </span>
+		<span id="4"> - </span>
+		<span id="5"> - </span>
+		<span id="6"> - </span>
+		<span id="7"> - </span>
+		<span id="8"> - </span>
+		<span id="9"> - </span>
+	</h1>
+	<h3 id="enter" class="white text-center hide">Press Enter</h3>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+
+<script>
+    var kCode = [];
+    var correct = [38,38,40,40,37,39,37,39,66,65];
+	var passcode = function(){
+        if (kCode.length < 10) {
+            // kCode.push(event.which);
+            for (var i = 0; i < 10; i++) {
+                if (kCode[i] === correct[i]) {
+                    $('#' + i).html('*')
+                } else if (kCode[i] === undefined) {
+                    $('#' + i).html('-')
+                }
+                else {
+                    $('#' + i).html('X')
+                }
+            }
+        }
+	};
+	var reset = function(){
+	    $('span').html('-');
+	};
+
+
+	  $(document).keyup(function(event) {
+		if(event.which !== 13 && event.which !== 8){
+	        kCode.push(event.which);
+            passcode()
+        }
+	  });
+
+    $(document).keyup(function(event) {
+
+        if(event.which === 13){
+
+            if (kCode.toString() === correct.toString()){
+            alert('You have added 30 lives!');
+	            $('span').addClass('hide')
+            }
+			else{
+		        kCode = [];
+		        reset();
+            }
+
+        }
+    });
+
+    $(document).keydown(function(event) {
+        if(event.which===8) {
+            kCode.splice(kCode.length - 1, 2);
+            console.log(kCode);
+	        passcode();
+        }
+    });
+
+
+</script>
+</body>
+</html>
