@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+
+
+<!--Create a new file named jquery_faq.html. Commit all changes to GitHub.-->
+
+<!--In a HTML structure, create a definition list containing 10 FAQs about national parks.-->
+
+<!--Add a class to all dd elements named invisible.-->
+
+<!--Create CSS that sets elements with the invisible class to visibility: hidden;.-->
+
+<!--Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.-->
+<style>
+	.invisible{
+		visibility: hidden;
+	}
+</style>
+
+<body>
+<h3>Click Me To See When These Parks Were Established!</h3>
+	<dl>
+		<dt>Acadia</dt>
+		<dd class ="invisible">February 26, 1919	</dd>
+		<dt>Capitol Reef</dt>
+		<dd class ="invisible">December 18, 1971	</dd>
+		<dt>Crater Lake</dt>
+		<dd class ="invisible">May 22, 1902	</dd>
+		<dt>Joshua Tree</dt>
+		<dd class ="invisible">October 31, 1994	</dd>
+		<dt>Mount Rainier</dt>
+		<dd class ="invisible">March 2, 1899	</dd>
+		<dt>Petrified Forest</dt>
+		<dd class ="invisible">December 9, 1962	</dd>
+		<dt>Virgin Islands</dt>
+		<dd class ="invisible">August 2, 1956	</dd>
+		<dt>Voyageurs</dt>
+		<dd class ="invisible">January 8, 1971	</dd>
+		<dt>Yosemite</dt>
+		<dd class ="invisible">October 1, 1890	</dd>
+		<dt>Zion</dt>
+		<dd class ="invisible">November 19, 1919	</dd>
+	</dl>
+
+
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+
+	$('h3').click(function(){
+	    $('dd').toggleClass('invisible')
+	});
+
+</script>
+</body>
+</html>
