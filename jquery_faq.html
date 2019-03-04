@@ -25,6 +25,8 @@
 
 
 <body>
+<h2>To Continue Viewing This Site Please Register </h2>
+<div id="container">
 <div id="newsletter">
 	<span id="newsletterexit">X</span>
 	<h1>Would You like to sign up for our newsletter?</h1>
@@ -79,10 +81,14 @@
 	</ul>
 <button id ='highlight'>CLick Me.</button>
 <br>
-
+</div>
 
 	<script src="js/jquery-3.3.1.min.js"></script>
 <script>
+
+	$('h2').hide().delay(8000).slideDown();
+
+	$('#container').delay(8000).slideUp(2000);
 
 	$('#answer').on('click', function(){
         $('dd').toggleClass('invisible');
@@ -108,7 +114,7 @@
 
 	$('li').on('click', function(){
 		$(this).parent().children().first().css('color','blue')
-	})
+	});
 
 	$('#newsletterexit').on('click', function(){
 		$('#newsletter').hide()
