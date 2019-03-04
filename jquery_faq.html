@@ -90,9 +90,11 @@
 
 
 
+	$('h3').next().children().hide();
+
 	$('h3').click(function(){
 
-	    $(this).next().children().css('font-weight', 'bold')
+	    $(this).next().children().css('font-weight', 'bold').slideToggle()
 	});
 
 	$('#highlight').on('click', function() {
