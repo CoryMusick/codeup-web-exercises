@@ -22,7 +22,7 @@
 </style>
 
 <body>
-<h3>Click Me To See When These Parks Were Established!</h3>
+<h3>Click The Button To See When These Parks Were Established!</h3>
 	<dl>
 		<dt>Acadia</dt>
 		<dd class ="invisible">February 26, 1919	</dd>
@@ -45,6 +45,7 @@
 		<dt>Zion</dt>
 		<dd class ="invisible">November 19, 1919	</dd>
 	</dl>
+<button id="answer"> Show Dates!</button>
 <h3>Zion National Park</h3>
 	<ul>
 		<li>Before it was a national park, Zion was a national monument, and it’s name wasn’t Zion. It was
@@ -68,7 +69,7 @@
 		<li>Quail Mountain is the highest mountain in the National Park</li>
 		<li>In 1973 the album cover photos for Eagles were shot in the Park</li>
 	</ul>
-<button>CLick Me.</button>
+<button id ='highlight'>CLick Me.</button>
 
 
 
@@ -77,19 +78,24 @@
 	<script src="js/jquery-3.3.1.min.js"></script>
 <script>
 
+	$('#answer').on('click', function(){
+        $('dd').toggleClass('invisible');
+	});
+
 	$('h3').click(function(){
-	    $('dd').toggleClass('invisible');
 
 	    $(this).next().children().css('font-weight', 'bold')
 
 	});
 
-	$('button').on('click', function() {
+	$('#highlight').on('click', function() {
 
 	    $('ul').each(function(i,e){
         $(this).children().last().css('background', 'yellow')
         })
 	});
+
+
 
 	$('li').on('click', function(){
 		$(this).parent().children().first().css('color','blue')
