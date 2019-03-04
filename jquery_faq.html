@@ -78,15 +78,22 @@
 <script>
 
 	$('h3').click(function(){
-	    $('dd').toggleClass('invisible')
+	    $('dd').toggleClass('invisible');
+
+	    $(this).next().children().css('font-weight', 'bold')
+
 	});
 
 	$('button').on('click', function() {
 
 	    $('ul').each(function(i,e){
-        console.log($(this).children().last().css('background', 'yellow'))
+        $(this).children().last().css('background', 'yellow')
         })
 	});
+
+	$('li').on('click', function(){
+		$(this).parent().children().first().css('color','blue')
+	})
 
 </script>
 </body>
