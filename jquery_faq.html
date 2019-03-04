@@ -21,7 +21,15 @@
 	}
 </style>
 
+
+
+
 <body>
+<div id="newsletter">
+	<span id="newsletterexit">X</span>
+	<h1>Would You like to sign up for our newsletter?</h1>
+
+</div>
 <h3>Click The Button To See When These Parks Were Established!</h3>
 	<dl>
 		<dt>Acadia</dt>
@@ -70,9 +78,7 @@
 		<li>In 1973 the album cover photos for Eagles were shot in the Park</li>
 	</ul>
 <button id ='highlight'>CLick Me.</button>
-
-
-
+<br>
 
 
 	<script src="js/jquery-3.3.1.min.js"></script>
@@ -82,10 +88,11 @@
         $('dd').toggleClass('invisible');
 	});
 
+
+
 	$('h3').click(function(){
 
 	    $(this).next().children().css('font-weight', 'bold')
-
 	});
 
 	$('#highlight').on('click', function() {
@@ -100,6 +107,13 @@
 	$('li').on('click', function(){
 		$(this).parent().children().first().css('color','blue')
 	})
+
+	$('#newsletterexit').on('click', function(){
+		$('#newsletter').hide()
+	})
+
+
+
 
 </script>
 </body>
