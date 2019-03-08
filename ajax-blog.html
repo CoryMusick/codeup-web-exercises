@@ -3,24 +3,176 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Blog</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/ajax-blog.css">
 </head>
-<body>
-<div id ="posts">
+
+<body class="masthead">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="#">MyBlog</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="Blog" href="#">Blog Posts</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Edit Blog
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" id="add" href="#" data-toggle="modal" data-target="#myModal">Add a Post</a>
+					<a class="dropdown-item" id="delete" href="#">Delete a Post</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	</div>
+</nav>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<!--INPUT FOR POST TITLE-->
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="inputGroup-title">Title:</span>
+					</div>
+					<input id="title" type="text" class="form-control" aria-label="New Blog Post Title"
+					       aria-describedby="inputGroup-title">
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<!-- TEXT BOX FOR ADD NEW BLOG MODAL-->
+			<div class="modal-body">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">Body</span>
+					</div>
+					<textarea id="body" class="form-control" aria-label="With textarea"></textarea>
+				</div>
+			</div>
+			<!-- TAG INPUT -->
+			<div class="input-group mb-3 mx-3 ">
+				<input id="tags" type="text" class="form-control" placeholder="add tags here..."
+				       aria-label="post tags"
+				       aria-describedby="button-addon2">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary mr-5" type="button" id="addTags">Add</button>
+				</div>
+			</div>
+			<!-- LIST OF ADDED TAGS -->
+			<div class="modal-body">
+				<div id="tagsList">
+
+				</div>
+			</div>
+			<!-- ADD / CANCEL BUTTONS -->
+			<div class="modal-footer">
+				<button id='cancel' type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				<button id='addPost' type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+
+	<div id="blogHeading">
+
+	</div>
+
+	<div id ="posts">
+
+	</div>
 
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
 	$().ready(function() {
 
-        var request = $.ajax("data/blog.json");
 
-        function onSuccess(data, status, req) {
-                data.forEach(function (element) {
-                    $('#posts').append('<h2>' + element.title + '<p>' + element.content +
-                        '<p>' + element.categories + ' <p>' + element.date)
-                })
+		var request = $.ajax("data/blog.json");
+		//DATE VARIABLE FORMATTING//
+		var today = new Date();
+        var options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+
+        //CREATES AND ADDS TAG BADGES //
+		function getCategories(categoryList) {
+            var catList = "";
+            for(var i = 0; i < categoryList.length; i++){
+                catList += '<a  href="#" class="badge badge-pill badge-info">';
+                catList += categoryList[i];
+                catList += '</a> '
             }
+            return catList
+        }
 
+        //ADDS NEW POST TO BLOG//
+        $('#addPost').on('click', function(){
+            if($('#title').val() == "" || $('#body').val() == "" ){
+                $('#addPost').removeClass('btn-primary').addClass('btn-danger');
+                setTimeout(function(){
+                    $('#addPost').removeClass('btn-danger').addClass('btn-primary');
+                }, 1000);
+            }
+            else{
+                $('#posts').append('<h3>' + $('#title').val() + '</h3>' + '<p>' + $('#body').val() + '</p>'
+                    + $('#tagsList').html() + '<p>' + today.toLocaleDateString("en-US", options) + '</p>')
+                $('#tags').val("");
+                $('#tagsList').html('');
+                $('#title').val("");
+                $('#body').val("");
+
+            }
+        });
+
+
+        // POPULATES ALL DATA FROM DATA FILE ON BLOG TAB CLICK //
+        function onSuccess(data, status, req) {
+            $('#Blog').on('click', function(){
+				$('#blogHeading').html('<h1 class="blogHead">' + 'My Travels' + '</h1>');
+                $('#posts').html('');
+                data.forEach(function (element) {
+                    $('#posts').append('<h3>' + element.title + '</h3>' + '<p>' + element.content + '</p>'
+                        + getCategories(element.categories) + '<p>' + element.date + '</p>')
+                });
+            })
+        }
+
+
+        // ADDS TAGS TO NEW POST MODAL //
+        $('#addTags').on('click', function(){
+	        var tagArray = $('#tags').val().split(' ');
+            $('#tags').val("");
+	        $('#tagsList').append('<span>' + getCategories(tagArray) + '</span>')
+
+
+        });
+
+		// CANCEL BUTTON CLEARS NEW POST INFO //
+        $('#cancel').on('click',function(){
+            $('#tags').val("");
+            $('#tagsList').html('');
+            $('#title').val("");
+            $('#body').val("");
+        });
 
         request.done(onSuccess)
         });
