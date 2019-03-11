@@ -1,3 +1,4 @@
-const sayHello = require('./say-hello.js');
+const data = require('./say-hello.js');
 
-sayHello();
+data.sayHello();
+data.sayGoodbye();
