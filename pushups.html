@@ -6,13 +6,26 @@
 </head>
 <body>
 <script>
-	function power(base, exponent){
-	    var product = 1;
-	    for (var i =0 ; i< exponent; i++){
-	        product *= base;
-	    }
-	    return product;
-	}
+	// const myPromise = new Promise((resolve, reject) =>{
+	// setTimeout(	() => { let number = Math.random();
+	//
+	//     console.log(`Our number is ${number}`);
+	//     if (number > 0.5) {
+    //         resolve();
+    //     }
+	//     else{
+	//         reject();
+	//     }
+	//     }, 1500)
+	// })
+	//
+	// 	.then(()=> console.log('resolved!'))
+	// 	.catch(() => console.log('rejected'))
+
+	fetch('https/api.github.com/users/:corymusick')
+	.then(response => console.log(response))
+	.catch(error => console.log(error))
+
 </script>
 </body>
 </html>
